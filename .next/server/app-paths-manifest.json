@@ -1,0 +1,8 @@
+{
+  "/sponsors/page": "app/sponsors/page.js",
+  "/speakers/page": "app/speakers/page.js",
+  "/agenda/page": "app/agenda/page.js",
+  "/about/page": "app/about/page.js",
+  "/page": "app/page.js",
+  "/contact/page": "app/contact/page.js"
+}

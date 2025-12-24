@@ -1,0 +1,4 @@
+[
+  { "id": "1", "name": "Prof. Karim", "title": "President", "company": "CNCR", "image": "/images/karim.svg", "bio": "Prof. Karim is a leading researcher in oncology with 25 years of experience." },
+  { "id": "2", "name": "Dr. Alexandra", "title": "Partner", "company": "Apollo Ventures", "image": "/images/alex.svg", "bio": "Dr. Alexandra focuses on early-stage biotech investments and mentorship." }
+]

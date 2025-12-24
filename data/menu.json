@@ -1,0 +1,8 @@
+[
+  { "title": "About CCOI", "icon": "Info", "link": "/about" },
+  { "title": "Register Now", "icon": "ClipboardList", "link": "https://spot.eventx.io/events/7f1c370a-d533-4e1a-ad98-5a17bcfcd5d3", "external": true },
+  { "title": "Agenda", "icon": "Calendar", "link": "/agenda" },
+  { "title": "Speakers", "icon": "Mic2", "link": "/speakers" },
+  { "title": "Sponsors", "icon": "Users", "link": "/sponsors" },
+  { "title": "Contact Us", "icon": "Mail", "link": "/contact" }
+]
