@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "update-agenda": "node scripts/fetch-from-sheets.js"
   },
   "dependencies": {
     "googleapis": "^169.0.0",
