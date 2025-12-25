@@ -60,7 +60,7 @@ export default function AgendaPage() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1E5A96]/10 rounded-full blur-3xl animate-pulse delay-700"></div>
       </div>
       <div className="relative z-10">
-      <header className="bg-white py-4 px-4 sticky top-0 z-10 shadow-sm mb-6">
+      <header className="bg-white py-4 px-4 fixed top-0 left-0 right-0 z-50 shadow-sm">
         <Link href="/" className="text-[#2E5B8D] text-sm mb-2 inline-block">← Back</Link>
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold text-gray-800">Agenda</h1>
@@ -84,7 +84,7 @@ export default function AgendaPage() {
         </div>
       </header>
 
-      <main className="px-4 pb-6">
+      <main className="px-4 pb-6 pt-36">
         <div className="space-y-8">
           {themes.map((theme) => {
             const themeTime = groupedSessions[theme][0]?.time || '';

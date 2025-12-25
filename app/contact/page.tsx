@@ -10,12 +10,12 @@ export default function ContactPage() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1E5A96]/10 rounded-full blur-3xl animate-pulse delay-700"></div>
       </div>
       <div className="relative z-10">
-      <header className="bg-white py-4 px-4 sticky top-0">
+      <header className="bg-white py-4 px-4 fixed top-0 left-0 right-0 z-50 shadow-sm">
         <Link href="/" className="text-[#2E5B8D] text-sm mb-2 inline-block">← Back</Link>
         <h1 className="text-2xl font-bold text-gray-800">Contact Us</h1>
       </header>
 
-      <main className="p-4 space-y-6">
+      <main className="p-4 space-y-6 pt-28">
         <section className="bg-white rounded-lg shadow-sm p-4">
           <h2 className="text-lg font-bold text-gray-800 mb-4">Get In Touch</h2>
           <p className="text-sm text-gray-700 mb-4 leading-relaxed">

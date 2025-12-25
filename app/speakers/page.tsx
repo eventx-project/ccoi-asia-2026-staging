@@ -178,13 +178,13 @@ export default function SpeakersPage() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1E5A96]/10 rounded-full blur-3xl animate-pulse delay-700"></div>
       </div>
       <div className="relative z-10">
-      <header className="bg-white py-4 px-4 sticky top-0 z-10 shadow-sm">
+      <header className="bg-white py-4 px-4 fixed top-0 left-0 right-0 z-50 shadow-sm">
         <Link href="/" className="text-[#2E5B8D] text-sm mb-2 inline-block">← Back</Link>
         <h1 className="text-2xl font-bold text-gray-800">Speakers</h1>
       </header>
 
-      <div className="flex">
-        <main className="flex-1 mt-4 px-4">
+      <div className="flex pt-24">
+        <main className="flex-1 mt-4 px-4 pr-12">
           {letters.map((letter) => (
             <section key={letter} id={letter} className="mb-6 scroll-mt-20">
               <h3 className="text-sm font-semibold text-gray-600 mb-3">{letter}</h3>
@@ -222,14 +222,14 @@ export default function SpeakersPage() {
           ))}
         </main>
 
-        <aside className="w-16 bg-transparent py-4 flex flex-col items-center gap-2 sticky top-16 h-screen overflow-y-auto">
+        <aside className="w-10 bg-transparent py-4 flex flex-col items-center gap-1 fixed right-0 top-32 bottom-24 overflow-y-auto z-40">
           {letters.map((letter) => (
             <button
               key={letter}
               onClick={() => {
                 document.getElementById(letter)?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="text-xs font-semibold text-gray-500 hover:text-[#2E5B8D] transition-colors w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded"
+              className="text-[10px] font-semibold text-gray-500 hover:text-[#2E5B8D] transition-colors w-6 h-6 flex items-center justify-center hover:bg-gray-100 rounded"
             >
               {letter}
             </button>
