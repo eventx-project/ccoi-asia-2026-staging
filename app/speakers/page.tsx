@@ -3,6 +3,7 @@ import { useMemo, useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Search, X } from 'lucide-react';
 import agendaData from '../../data/agenda.json';
 import { getImagePath } from '../../lib/utils';
 
@@ -211,7 +212,18 @@ function initials(name: string) {
 
 function SpeakersContent() {
   const speakers = useMemo(buildSpeakers, []);
-  const grouped = useMemo(() => groupByLetter(speakers), [speakers]);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredSpeakers = useMemo(() => {
+    if (!searchQuery) return speakers;
+    return speakers.filter(s =>
+      s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      s.company?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      s.title?.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [speakers, searchQuery]);
+
+  const grouped = useMemo(() => groupByLetter(filteredSpeakers), [filteredSpeakers]);
   const letters = Object.keys(grouped).sort();
 
   const [selected, setSelected] = useState<Speaker | null>(null);
@@ -235,13 +247,41 @@ function SpeakersContent() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1E5A96]/10 rounded-full blur-3xl animate-pulse delay-700"></div>
       </div>
       <div className="relative z-10">
-      <header className="bg-white py-4 px-4 fixed top-0 left-0 right-0 z-50 shadow-sm">
-        <Link href="/" className="text-[#2E5B8D] text-sm mb-2 inline-block">← Back</Link>
-        <h1 className="text-2xl font-bold text-gray-800">Speakers</h1>
+      <header className="bg-white/95 backdrop-blur-sm py-4 px-4 fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-gray-100">
+        <Link href="/" className="text-[#2E5B8D] text-sm font-medium hover:underline mb-2 inline-block">← Back</Link>
+        <h1 className="text-2xl font-bold text-gray-900 mb-4">Speakers</h1>
+        
+        <div className="relative group">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-[#2E5B8D] transition-colors" />
+          <input
+            type="text"
+            placeholder="Search speakers..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-9 pr-9 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#2E5B8D]/20 focus:border-[#2E5B8D] transition-all"
+          />
+          {searchQuery && (
+            <button 
+              onClick={() => setSearchQuery('')}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 p-1"
+            >
+              <X className="w-3 h-3" />
+            </button>
+          )}
+        </div>
       </header>
 
-      <div className="flex pt-24">
+      <div className="flex pt-40">
         <main className="flex-1 mt-4 px-4 pr-12">
+          {letters.length === 0 && (
+            <div className="text-center py-12">
+              <div className="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="w-8 h-8 text-gray-300" />
+              </div>
+              <h3 className="text-gray-900 font-medium mb-1">No speakers found</h3>
+              <p className="text-gray-500 text-sm">Try adjusting your search</p>
+            </div>
+          )}
           {letters.map((letter) => (
             <section key={letter} id={letter} className="mb-6 scroll-mt-20">
               <h3 className="text-sm font-semibold text-gray-600 mb-3">{letter}</h3>

@@ -2,6 +2,7 @@
 import { useState, useMemo, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { Search, Filter, X, Star } from 'lucide-react';
 import agendaData from '../../data/agenda.json';
 
 type Session = {
@@ -62,16 +63,66 @@ function AgendaContent() {
   const dayInfo = day === 'myopia' ? (agendaData as any).myopia_day : (agendaData as any).innovation_day;
   const sessions: Session[] = dayInfo?.sessions || [];
 
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTheme, setSelectedTheme] = useState<string>('All');
+  const [showFilters, setShowFilters] = useState(false);
+
+  // Favorites logic
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('ccoi-favorites');
+    if (saved) {
+      setFavorites(JSON.parse(saved));
+    }
+  }, []);
+
+  const toggleFavorite = (id: string) => {
+    const newFavorites = favorites.includes(id)
+      ? favorites.filter(f => f !== id)
+      : [...favorites, id];
+    setFavorites(newFavorites);
+    localStorage.setItem('ccoi-favorites', JSON.stringify(newFavorites));
+  };
+
+  // Get all available themes for the dropdown
+  const allThemes = useMemo(() => {
+    const themes = new Set<string>();
+    sessions.forEach(session => {
+      if (session.theme) themes.add(session.theme);
+    });
+    return ['All', ...Array.from(themes)];
+  }, [sessions]);
+
+  // Filter sessions
+  const filteredSessions = useMemo(() => {
+    return sessions.filter(session => {
+      const sessionId = session.block || session.time;
+      const matchesSearch = searchQuery === '' ||
+        session.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        session.speakers.some(s => s.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (session.moderators && session.moderators.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()))) ||
+        (session.panelists && session.panelists.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()))) ||
+        session.description?.toLowerCase().includes(searchQuery.toLowerCase());
+
+      const matchesTheme = selectedTheme === 'All' || session.theme === selectedTheme;
+      const matchesFavorite = !showFavoritesOnly || favorites.includes(sessionId);
+
+      return matchesSearch && matchesTheme && matchesFavorite;
+    });
+  }, [sessions, searchQuery, selectedTheme, showFavoritesOnly, favorites]);
+
   // Group sessions by theme
   const groupedSessions = useMemo(() => {
     const groups: Record<string, Session[]> = {};
-    sessions.forEach((session) => {
+    filteredSessions.forEach((session) => {
       const theme = session.theme || 'Other';
       if (!groups[theme]) groups[theme] = [];
       groups[theme].push(session);
     });
     return groups;
-  }, [sessions]);
+  }, [filteredSessions]);
 
   const themes = Object.keys(groupedSessions);
 
@@ -83,31 +134,95 @@ function AgendaContent() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1E5A96]/10 rounded-full blur-3xl animate-pulse delay-700"></div>
       </div>
       <div className="relative z-10">
-      <header className="bg-white py-4 px-4 fixed top-0 left-0 right-0 z-50 shadow-sm">
-        <Link href="/" className="text-[#2E5B8D] text-sm mb-2 inline-block">← Back</Link>
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-gray-800">Agenda</h1>
-          <div className="flex gap-2">
+      <header className="bg-white/95 backdrop-blur-sm py-4 px-4 fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-gray-100">
+        <div className="flex items-center justify-between mb-2">
+           <Link href="/" className="text-[#2E5B8D] text-sm font-medium hover:underline">← Back</Link>
+           <div className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded-full">{dayInfo?.date}</div>
+        </div>
+        
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Agenda</h1>
+          <div className="flex items-center gap-3">
+            <button
+               onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
+               className={`p-2 rounded-full transition-colors ${showFavoritesOnly ? 'bg-yellow-50 text-yellow-500 ring-1 ring-yellow-200' : 'bg-gray-50 text-gray-400 hover:text-yellow-500'}`}
+               aria-label="Show favorites only"
+             >
+               <Star className={`w-5 h-5 ${showFavoritesOnly ? 'fill-current' : ''}`} />
+             </button>
+            <div className="flex rounded-lg overflow-hidden border border-[#2E5B8D]/20 shadow-sm">
             <button
               onClick={() => setDay('myopia')}
-              className={`px-3 py-1 rounded ${day === 'myopia' ? 'bg-[#2E5B8D] text-white' : 'bg-gray-100 text-gray-700'}`}
+              className={`px-3 py-1.5 text-xs font-medium transition-colors ${day === 'myopia' ? 'bg-[#2E5B8D] text-white' : 'bg-white text-gray-600 hover:bg-gray-50'}`}
             >
-              Myopia Day
+              Myopia
             </button>
+            <div className="w-px bg-[#2E5B8D]/20"></div>
             <button
               onClick={() => setDay('innovation')}
-              className={`px-3 py-1 rounded ${day === 'innovation' ? 'bg-[#2E5B8D] text-white' : 'bg-gray-100 text-gray-700'}`}
+              className={`px-3 py-1.5 text-xs font-medium transition-colors ${day === 'innovation' ? 'bg-[#2E5B8D] text-white' : 'bg-white text-gray-600 hover:bg-gray-50'}`}
             >
-              Innovation Day
+              Innovation
             </button>
           </div>
+          </div>
         </div>
-        <div className="mt-2 text-sm text-gray-600">
-          {dayInfo?.title} — {dayInfo?.date}
+
+        {/* Search and Filter */}
+        <div className="space-y-3">
+          <div className="relative group">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-[#2E5B8D] transition-colors" />
+            <input
+              type="text"
+              placeholder="Search sessions, speakers..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-9 pr-9 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#2E5B8D]/20 focus:border-[#2E5B8D] transition-all"
+            />
+            {searchQuery && (
+              <button 
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 p-1"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            )}
+          </div>
+
+          <div className="flex gap-2 overflow-x-auto pb-1 -mx-4 px-4 no-scrollbar">
+             {allThemes.map(theme => (
+               <button
+                 key={theme}
+                 onClick={() => setSelectedTheme(theme)}
+                 className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                   selectedTheme === theme 
+                     ? 'bg-[#2E5B8D] text-white shadow-md shadow-[#2E5B8D]/20 ring-2 ring-[#2E5B8D]/20 ring-offset-1' 
+                     : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-gray-300'
+                 }`}
+               >
+                 {theme}
+               </button>
+             ))}
+          </div>
         </div>
       </header>
 
-      <main className="px-4 pb-6 pt-36">
+      <main className="px-4 pb-6 pt-52">
+        {themes.length === 0 && (
+          <div className="text-center py-12">
+            <div className="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Search className="w-8 h-8 text-gray-300" />
+            </div>
+            <h3 className="text-gray-900 font-medium mb-1">No sessions found</h3>
+            <p className="text-gray-500 text-sm">Try adjusting your search or filters</p>
+            <button 
+              onClick={() => {setSearchQuery(''); setSelectedTheme('All');}}
+              className="mt-4 text-[#2E5B8D] text-sm font-medium hover:underline"
+            >
+              Clear all filters
+            </button>
+          </div>
+        )}
         <div className="space-y-8">
           {themes.map((theme) => {
             const themeTime = groupedSessions[theme][0]?.time || '';
@@ -140,8 +255,20 @@ function AgendaContent() {
                         timeDisplay[0]
                       )}
                     </div>
-                    <div className="flex-1 bg-white p-4 rounded-lg shadow-sm">
-                      <h4 className="font-semibold text-gray-800 leading-snug">{session.title}</h4>
+                    <div className="flex-1 bg-white p-4 rounded-lg shadow-sm relative">
+                      <div className="flex justify-between items-start gap-2">
+                        <h4 className="font-semibold text-gray-800 leading-snug flex-1">{session.title}</h4>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleFavorite(session.block || session.time);
+                          }}
+                          className="text-gray-300 hover:text-yellow-500 transition-colors p-1 -mr-2 -mt-2"
+                          aria-label={favorites.includes(session.block || session.time) ? "Remove from favorites" : "Add to favorites"}
+                        >
+                          <Star className={`w-5 h-5 ${favorites.includes(session.block || session.time) ? 'fill-yellow-400 text-yellow-400' : ''}`} />
+                        </button>
+                      </div>
                       <div className="text-xs text-gray-500 mt-1">{session.location}</div>
                       
                       {session.moderators && session.moderators.length > 0 && (
