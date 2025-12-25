@@ -1,5 +1,6 @@
 "use client";
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import agendaData from '../../data/agenda.json';
@@ -18,6 +19,7 @@ type SpeakerSession = {
   dayTitle: string;
   date: string;
   time: string;
+  block?: string;
   title: string;
   theme?: string;
   location: string;
@@ -97,12 +99,12 @@ function buildSpeakers(): Speaker[] {
              const existing = map.get(slug)!;
              existing.name = getPreferredName(existing.name, name);
           }
-          
           map.get(slug)!.sessions.push({
             dayKey: key,
             dayTitle: data.title,
             date: data.date,
             time: session.time,
+            block: session.block,
             title: session.title,
             theme: session.theme,
             location: session.location
@@ -129,12 +131,12 @@ function buildSpeakers(): Speaker[] {
           const existing = map.get(slug)!;
           existing.name = getPreferredName(existing.name, name);
         }
-        
         map.get(slug)!.sessions.push({
           dayKey: key,
           dayTitle: data.title,
           date: data.date,
           time: session.time,
+          block: session.block,
           title: session.title,
           theme: session.theme,
           location: session.location
@@ -207,12 +209,23 @@ function initials(name: string) {
   return (parts[0][0] || '') + (parts[1][0] || '');
 }
 
-export default function SpeakersPage() {
+function SpeakersContent() {
   const speakers = useMemo(buildSpeakers, []);
   const grouped = useMemo(() => groupByLetter(speakers), [speakers]);
   const letters = Object.keys(grouped).sort();
 
   const [selected, setSelected] = useState<Speaker | null>(null);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const slug = searchParams.get('slug');
+    if (slug) {
+      const speaker = speakers.find(s => s.slug === slug);
+      if (speaker) {
+        setSelected(speaker);
+      }
+    }
+  }, [searchParams, speakers]);
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-white">
@@ -308,7 +321,11 @@ export default function SpeakersPage() {
             </div>
             <div className="mt-3 space-y-3 max-h-72 overflow-y-auto pr-1">
               {selected.sessions.map((s, idx) => (
-                <Link href="/agenda" key={idx} className="block border rounded-lg p-3 bg-gray-50 hover:bg-gray-100 transition-colors">
+                <Link 
+                  href={`/agenda?day=${s.dayKey}#${s.block || s.time}`} 
+                  key={idx} 
+                  className="block border rounded-lg p-3 bg-gray-50 hover:bg-gray-100 transition-colors"
+                >
                   <div className="text-xs text-gray-500">{s.dayTitle} • {s.date}</div>
                   <div className="text-sm font-semibold text-gray-800 mt-1">{s.title}</div>
                   {s.theme && <div className="text-xs text-gray-500 mt-0.5">{s.theme}</div>}
@@ -331,5 +348,13 @@ export default function SpeakersPage() {
       </footer>
       </div>
     </div>
+  );
+}
+
+export default function SpeakersPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SpeakersContent />
+    </Suspense>
   );
 }

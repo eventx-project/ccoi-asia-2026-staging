@@ -1,5 +1,6 @@
 "use client";
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import agendaData from '../../data/agenda.json';
 
@@ -33,8 +34,30 @@ const isLinkable = (name: string) => {
   return true;
 };
 
-export default function AgendaPage() {
+function AgendaContent() {
+  const searchParams = useSearchParams();
   const [day, setDay] = useState<'myopia' | 'innovation'>('myopia');
+
+  useEffect(() => {
+    const dayParam = searchParams.get('day');
+    if (dayParam === 'innovation' || dayParam === 'myopia') {
+      setDay(dayParam);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = decodeURIComponent(window.location.hash.substring(1));
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          element.classList.add('ring-2', 'ring-[#2E5B8D]', 'ring-offset-2');
+          setTimeout(() => element.classList.remove('ring-2', 'ring-[#2E5B8D]', 'ring-offset-2'), 2000);
+        }
+      }, 300);
+    }
+  }, [day]);
 
   const dayInfo = day === 'myopia' ? (agendaData as any).myopia_day : (agendaData as any).innovation_day;
   const sessions: Session[] = dayInfo?.sessions || [];
@@ -103,7 +126,11 @@ export default function AgendaPage() {
                   const timeString = session.block || session.time;
                   const timeDisplay = timeString.split(/[-–]/); // Split by hyphen or en-dash
                   return (
-                  <div key={`${theme}-${idx}`} className="flex gap-2 items-start">
+                  <div 
+                    key={`${theme}-${idx}`} 
+                    id={session.block || session.time}
+                    className="flex gap-2 items-start scroll-mt-40 transition-all duration-300 rounded-lg p-1"
+                  >
                     <div className="w-16 text-right text-xs text-gray-500 flex-shrink-0 pt-1">
                       {timeDisplay.length > 1 ? (
                         <>
@@ -127,7 +154,7 @@ export default function AgendaPage() {
                             return (
                               <span key={`mod-${moderator}-${i}`} className="inline-flex items-center gap-1">
                                 {linkable ? (
-                                  <Link href={`/speakers#${slug}`} className="text-[#2E5B8D] underline">
+                                  <Link href={`/speakers?slug=${slug}`} className="text-[#2E5B8D] underline">
                                     {moderator}
                                   </Link>
                                 ) : (
@@ -150,7 +177,7 @@ export default function AgendaPage() {
                             return (
                               <span key={`pan-${panelist}-${i}`} className="inline-flex items-center gap-1">
                                 {linkable ? (
-                                  <Link href={`/speakers#${slug}`} className="text-[#2E5B8D] underline">
+                                  <Link href={`/speakers?slug=${slug}`} className="text-[#2E5B8D] underline">
                                     {panelist}
                                   </Link>
                                 ) : (
@@ -172,7 +199,7 @@ export default function AgendaPage() {
                             return (
                               <span key={`${speaker}-${i}`} className="inline-flex items-center gap-1">
                                 {linkable ? (
-                                  <Link href={`/speakers#${slug}`} className="text-[#2E5B8D] underline">
+                                  <Link href={`/speakers?slug=${slug}`} className="text-[#2E5B8D] underline">
                                     {speaker}
                                   </Link>
                                 ) : (
@@ -205,5 +232,13 @@ export default function AgendaPage() {
       </footer>
       </div>
     </div>
+  );
+}
+
+export default function AgendaPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AgendaContent />
+    </Suspense>
   );
 }
