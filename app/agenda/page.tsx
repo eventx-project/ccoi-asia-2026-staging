@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Search, Filter, X, Star } from 'lucide-react';
 import agendaData from '../../data/agenda.json';
+import ScrollToTop from '../components/ScrollToTop';
 
 type Session = {
   time: string;
@@ -208,6 +209,7 @@ function AgendaContent() {
       </header>
 
       <main className="px-4 pb-6 pt-52">
+        <ScrollToTop />
         {themes.length === 0 && (
           <div className="text-center py-12">
             <div className="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">

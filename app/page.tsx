@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Users, Info, Network, ClipboardList, BookOpen } from 'lucide-react';
 import { getImagePath } from '../lib/utils';
+import InstallPrompt from './components/InstallPrompt';
 
 export default function Home() {
   const quickLinks = [
@@ -15,6 +16,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-white">
+      <InstallPrompt />
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#2E5B8D]/10 rounded-full blur-3xl animate-pulse"></div>

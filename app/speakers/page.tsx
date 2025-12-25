@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Search, X } from 'lucide-react';
 import agendaData from '../../data/agenda.json';
 import { getImagePath } from '../../lib/utils';
+import ScrollToTop from '../components/ScrollToTop';
 
 // Import speaker images mapping if it exists
 let speakerImageMap: Record<string, string> = {};
@@ -272,6 +273,7 @@ function SpeakersContent() {
       </header>
 
       <div className="flex pt-40">
+        <ScrollToTop />
         <main className="flex-1 mt-4 px-4 pr-12">
           {letters.length === 0 && (
             <div className="text-center py-12">
