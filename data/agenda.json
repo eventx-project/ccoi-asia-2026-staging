@@ -4,9 +4,9 @@
     "date": "Feb 3, 2026",
     "sessions": [
       {
-        "time": "08:00–08:25",
+        "time": "08:00–08:30",
         "theme": "Opening Session",
-        "title": "Welcome Remarks",
+        "title": "Welcome Remarks & Overview of the Collaborative Community on Ophthalmic Innovation (CCOI)",
         "location": "Grand Ballroom",
         "speakers": [
           "Malvina EYDELMAN (U.S.)"
@@ -14,10 +14,10 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "08:00–08:05"
+        "block": "08:00–08:10"
       },
       {
-        "time": "08:00–08:25",
+        "time": "08:00–08:30",
         "theme": "Opening Session",
         "title": "Keynote Lecture 1: Myopia Management in Asia",
         "location": "Grand Ballroom",
@@ -27,12 +27,12 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "08:05–08:25"
+        "block": "08:10–08:30"
       },
       {
-        "time": "08:30–09:45",
-        "theme": "Session 1: Key Parameters for Effective Myopia Control Products",
-        "title": "Summary of CCOI’s Myopia Workshop",
+        "time": "08:30–10:10",
+        "theme": "Session 1: Key Parameters for Effective Myopia Control Products - Harmonizing Global Approvals",
+        "title": "Summary of CCOI’s 9/25 Myopia Workshop in Paris",
         "location": "Grand Ballroom",
         "speakers": [
           "Daniel TING (Singapore)"
@@ -43,13 +43,12 @@
         "block": "08:30–08:38"
       },
       {
-        "time": "08:30–09:45",
-        "theme": "Session 1: Key Parameters for Effective Myopia Control Products",
-        "title": "Axial Length Progression is preferred – How much benefit should there be?",
+        "time": "08:30–10:10",
+        "theme": "Session 1: Key Parameters for Effective Myopia Control Products - Harmonizing Global Approvals",
+        "title": "Definition of Fast/Slow Progressors for Clinical Trials",
         "location": "Grand Ballroom",
         "speakers": [
-          "Gareth LINGHAM",
-          "David MACKEY"
+          "Seang Mei SAW (Singapore)"
         ],
         "moderators": [],
         "panelists": [],
@@ -57,8 +56,21 @@
         "block": "08:38–08:46"
       },
       {
-        "time": "08:30–09:45",
-        "theme": "Session 1: Key Parameters for Effective Myopia Control Products",
+        "time": "08:30–10:10",
+        "theme": "Session 1: Key Parameters for Effective Myopia Control Products - Harmonizing Global Approvals",
+        "title": "Axial Length Progression Is Preferred – How Much Benefit Should There Be?",
+        "location": "Grand Ballroom",
+        "speakers": [
+          "Michael REPKA (U.S.)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "description": "",
+        "block": "08:46–08:54"
+      },
+      {
+        "time": "08:30–10:10",
+        "theme": "Session 1: Key Parameters for Effective Myopia Control Products - Harmonizing Global Approvals",
         "title": "Spherical Equivalent is preferred – How much benefit should there be?",
         "location": "Grand Ballroom",
         "speakers": [
@@ -67,28 +79,15 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "08:46–08:54"
-      },
-      {
-        "time": "08:30–09:45",
-        "theme": "Session 1: Key Parameters for Effective Myopia Control Products",
-        "title": "Are There Alternatives to a Placebo Control Group That Are Acceptable?",
-        "location": "Grand Ballroom",
-        "speakers": [
-          "Donald MUTTI (U.S.)"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
         "block": "08:54–09:02"
       },
       {
-        "time": "08:30–09:45",
-        "theme": "Session 1: Key Parameters for Effective Myopia Control Products",
-        "title": "Fast Progressors – Fact or Myth",
+        "time": "08:30–10:10",
+        "theme": "Session 1: Key Parameters for Effective Myopia Control Products - Harmonizing Global Approvals",
+        "title": "Are There Acceptable Alternatives to a Placebo Control Group?",
         "location": "Grand Ballroom",
         "speakers": [
-          "Wesley BEAULIEU (U.S.)"
+          "Mark BULLIMORE (U.S.)"
         ],
         "moderators": [],
         "panelists": [],
@@ -96,14 +95,12 @@
         "block": "09:02–09:10"
       },
       {
-        "time": "08:30–09:45",
-        "theme": "Session 1: Key Parameters for Effective Myopia Control Products",
-        "title": "Long-Term Follow-up of Effectiveness – What Are Acceptable Alternatives?",
+        "time": "08:30–10:10",
+        "theme": "Session 1: Key Parameters for Effective Myopia Control Products - Harmonizing Global Approvals",
+        "title": "TBC",
         "location": "Grand Ballroom",
         "speakers": [
-          "ATLAS Team",
-          "Donald MUTTI",
-          "Donald TAN"
+          "Paula JOHNS (U.S.)"
         ],
         "moderators": [],
         "panelists": [],
@@ -111,8 +108,47 @@
         "block": "09:10–09:18"
       },
       {
-        "time": "08:30–09:45",
-        "theme": "Session 1: Key Parameters for Effective Myopia Control Products",
+        "time": "08:30–10:10",
+        "theme": "Session 1: Key Parameters for Effective Myopia Control Products - Harmonizing Global Approvals",
+        "title": "Long-Term Follow-Up of Effectiveness – What Are the Acceptable Alternatives?",
+        "location": "Grand Ballroom",
+        "speakers": [
+          "Seo Wei LEO (Singapore)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "description": "",
+        "block": "09:18–09:26"
+      },
+      {
+        "time": "08:30–10:10",
+        "theme": "Session 1: Key Parameters for Effective Myopia Control Products - Harmonizing Global Approvals",
+        "title": "Safety and Adverse Events – What is Okay?",
+        "location": "Grand Ballroom",
+        "speakers": [
+          "Emi INAGAKI (Japan)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "description": "",
+        "block": "09:26–09:34"
+      },
+      {
+        "time": "08:30–10:10",
+        "theme": "Session 1: Key Parameters for Effective Myopia Control Products - Harmonizing Global Approvals",
+        "title": "How Hard Is It to Bring a Myopia Product to the Market?",
+        "location": "Grand Ballroom",
+        "speakers": [
+          "George ZORICH (U.S.)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "description": "",
+        "block": "09:34–09:42"
+      },
+      {
+        "time": "08:30–10:10",
+        "theme": "Session 1: Key Parameters for Effective Myopia Control Products - Harmonizing Global Approvals",
         "title": "Panel Discussion",
         "location": "Grand Ballroom",
         "speakers": [],
@@ -122,10 +158,21 @@
         ],
         "panelists": [],
         "description": "",
-        "block": "09:18–09:45"
+        "block": "09:42–10:10"
       },
       {
-        "time": "10:15–11:10",
+        "time": "10:10–10:40",
+        "theme": "Coffee Break",
+        "title": "Coffee Break",
+        "location": "Foyer",
+        "speakers": [],
+        "moderators": [],
+        "panelists": [],
+        "description": "",
+        "block": "10:10–10:40"
+      },
+      {
+        "time": "10:40–11:40",
         "theme": "Session 2: Lens Power – Shaping the Future",
         "title": "From Prevention to Progression Management with Spectacle Solutions",
         "location": "Grand Ballroom",
@@ -135,10 +182,10 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "10:15–10:23"
+        "block": "10:40–10:48"
       },
       {
-        "time": "10:15–11:10",
+        "time": "10:40–11:40",
         "theme": "Session 2: Lens Power – Shaping the Future",
         "title": "Reimagining Myopia Control: Next-Gen Contact Lens Technology",
         "location": "Grand Ballroom",
@@ -148,44 +195,54 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "10:23–10:31"
+        "block": "10:48–10:56"
       },
       {
-        "time": "10:15–11:10",
+        "time": "10:40–11:40",
         "theme": "Session 2: Lens Power – Shaping the Future",
-        "title": "Contact Lenses",
+        "title": "Utilization of Contact Lenses and Other Myopia Control Products",
         "location": "Grand Ballroom",
         "speakers": [
-          "Li Lian FOO (Singapore)",
-          "Pauline CHO"
+          "Olivia WOO (Australia)"
         ],
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "10:31–10:39"
+        "block": "10:56–11:04"
       },
       {
-        "time": "10:15–11:10",
+        "time": "10:40–11:40",
+        "theme": "Session 2: Lens Power – Shaping the Future",
+        "title": "TBC",
+        "location": "Grand Ballroom",
+        "speakers": [
+          "Nicholas WERNER (U.S.)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "description": "",
+        "block": "11:04–11:12"
+      },
+      {
+        "time": "10:40–11:40",
         "theme": "Session 2: Lens Power – Shaping the Future",
         "title": "Panel Discussion",
         "location": "Grand Ballroom",
         "speakers": [],
         "moderators": [
-          "Malvina EYDELMAN",
-          "Daniel TING"
+          "Olga PRENAT (France)",
+          "Padmaja SANKARIDURG (Australia)"
         ],
         "panelists": [
           "Mark BULLIMORE (U.S.)",
           "Pengtat CHEONG (Taiwan)",
-          "Emi INAGAKI (Japan)",
-          "Padmaja SANKARIDURG (Australia)",
           "Michael REPKA (U.S.)"
         ],
         "description": "",
-        "block": "10:39–11:10"
+        "block": "11:12–11:40"
       },
       {
-        "time": "11:10–12:25",
+        "time": "11:40–12:45",
         "theme": "Session 3: Pharmacologic Frontiers – Targeting Myopia",
         "title": "Halting the Myopia Tsunami in Asia: The Role of Early Low-Dose Atropine",
         "location": "Grand Ballroom",
@@ -195,23 +252,10 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "11:10–11:18"
+        "block": "11:40–11:48"
       },
       {
-        "time": "11:10–12:25",
-        "theme": "Session 3: Pharmacologic Frontiers – Targeting Myopia",
-        "title": "Atropine Concentration: Lessons from the ATOM Studies",
-        "location": "Grand Ballroom",
-        "speakers": [
-          "Donald TAN"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "11:18–11:26"
-      },
-      {
-        "time": "11:10–12:25",
+        "time": "11:40–12:45",
         "theme": "Session 3: Pharmacologic Frontiers – Targeting Myopia",
         "title": "The Use of Atropine in Real-World Practice",
         "location": "Grand Ballroom",
@@ -221,36 +265,23 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "11:26–11:34"
+        "block": "11:48–11:56"
       },
       {
-        "time": "11:10–12:25",
+        "time": "11:40–12:45",
         "theme": "Session 3: Pharmacologic Frontiers – Targeting Myopia",
         "title": "Oral Medication: A Novel Pathway",
         "location": "Grand Ballroom",
         "speakers": [
-          "Seang Mei SAW (Singapore)"
+          "Patricia ZILLIOX (U.S.)"
         ],
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "11:34–11:42"
+        "block": "11:56–12:04"
       },
       {
-        "time": "11:10–12:25",
-        "theme": "Session 3: Pharmacologic Frontiers – Targeting Myopia",
-        "title": "Dilute Atropine: Perspective of a US/European Company’s Investigations",
-        "location": "Grand Ballroom",
-        "speakers": [
-          "Patrick JOHNSON (U.S.)"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "11:42–11:50"
-      },
-      {
-        "time": "11:10–12:25",
+        "time": "11:40–12:45",
         "theme": "Session 3: Pharmacologic Frontiers – Targeting Myopia",
         "title": "Regulation of Drugs for Myopia in Japan",
         "location": "Grand Ballroom",
@@ -260,10 +291,10 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "11:50–11:58"
+        "block": "12:04–12:12"
       },
       {
-        "time": "11:10–12:25",
+        "time": "11:40–12:45",
         "theme": "Session 3: Pharmacologic Frontiers – Targeting Myopia",
         "title": "Regulation of Drugs for Myopia in the U.S.",
         "location": "Grand Ballroom",
@@ -273,26 +304,27 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "11:58–12:06"
+        "block": "12:12–12:20"
       },
       {
-        "time": "11:10–12:25",
+        "time": "11:40–12:45",
         "theme": "Session 3: Pharmacologic Frontiers – Targeting Myopia",
         "title": "Panel Discussion",
         "location": "Grand Ballroom",
         "speakers": [],
         "moderators": [
-          "Malvina EYDELMAN",
-          "Daniel TING"
+          "Lavin ACHUDAN",
+          "Malvina EYDELMAN"
         ],
         "panelists": [
-          "Michael REPKA"
+          "Michael REPKA",
+          "Seang Mei SAW"
         ],
         "description": "",
-        "block": "12:06–12:25"
+        "block": "12:20–12:45"
       },
       {
-        "time": "12:30–13:30",
+        "time": "12:45–13:45",
         "theme": "RCSV Lunch Symposium",
         "title": "Lunch Symposium",
         "location": "Grand Ballroom",
@@ -302,10 +334,10 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "12:30–13:30"
+        "block": "12:45–13:45"
       },
       {
-        "time": "13:30–13:50",
+        "time": "13:45–14:05",
         "theme": "Keynote Lecture 2",
         "title": "Industry’s Role in Expanding the Myopia Toolkit: Catalyzing New Options for a Growing Crisis",
         "location": "Grand Ballroom",
@@ -315,10 +347,10 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "13:30–13:50"
+        "block": "13:45–14:05"
       },
       {
-        "time": "13:50–14:50",
+        "time": "14:05–15:15",
         "theme": "Session 4: Rays That Slow – Harnessing Light to Fight Myopia",
         "title": "Violet Light Hypothesis for Suppression of Myopia",
         "location": "Grand III, IV & Annex",
@@ -328,10 +360,10 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "13:50–13:58"
+        "block": "14:05–14:13"
       },
       {
-        "time": "13:50–14:50",
+        "time": "14:05–15:15",
         "theme": "Session 4: Rays That Slow – Harnessing Light to Fight Myopia",
         "title": "TBC",
         "location": "Grand III, IV & Annex",
@@ -341,23 +373,10 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "13:58–14:06"
+        "block": "14:13–14:21"
       },
       {
-        "time": "13:50–14:50",
-        "theme": "Session 4: Rays That Slow – Harnessing Light to Fight Myopia",
-        "title": "Blue Light – Evidence for Myopia Management",
-        "location": "Grand III, IV & Annex",
-        "speakers": [
-          "Ian FLITCROFT (Ireland)"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "14:06–14:14"
-      },
-      {
-        "time": "13:50–14:50",
+        "time": "14:05–15:15",
         "theme": "Session 4: Rays That Slow – Harnessing Light to Fight Myopia",
         "title": "Red Light – Evidence for Myopia Management",
         "location": "Grand III, IV & Annex",
@@ -367,10 +386,23 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "14:14–14:22"
+        "block": "14:21–14:29"
       },
       {
-        "time": "13:50–14:50",
+        "time": "14:05–15:15",
+        "theme": "Session 4: Rays That Slow – Harnessing Light to Fight Myopia",
+        "title": "TBC",
+        "location": "Grand III, IV & Annex",
+        "speakers": [
+          "Toshihide KURIHARA (Japan)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "description": "",
+        "block": "14:29–14:37"
+      },
+      {
+        "time": "14:05–15:15",
         "theme": "Session 4: Rays That Slow – Harnessing Light to Fight Myopia",
         "title": "Regulatory Standards for Ocular Light Exposure",
         "location": "Grand III, IV & Annex",
@@ -380,98 +412,27 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "14:22–14:30"
+        "block": "14:37–14:45"
       },
       {
-        "time": "13:50–14:50",
+        "time": "14:05–15:15",
         "theme": "Session 4: Rays That Slow – Harnessing Light to Fight Myopia",
         "title": "Panel Discussion",
         "location": "Grand III, IV & Annex",
         "speakers": [],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "14:30–14:50"
-      },
-      {
-        "time": "13:50–14:50",
-        "theme": "Session 7: Mapping Myopia – Who, How & How Fast",
-        "title": "Insights into Prevalence, Progression & Prevention – Japan",
-        "location": "Grand III, IV & Annex",
-        "speakers": [
-          "Kyoko MATSUI"
+        "moderators": [
+          "Mingguang HE (Hong Kong)",
+          "Toshihide KURIHARA (Japan)"
         ],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "13:50–13:58"
-      },
-      {
-        "time": "13:50–14:50",
-        "theme": "Session 7: Mapping Myopia – Who, How & How Fast",
-        "title": "Insights into Prevalence, Progression & Prevention – Singapore & China",
-        "location": "Grand III, IV & Annex",
-        "speakers": [
-          "Tien WONG (China)"
+        "panelists": [
+          "Michael REPKA",
+          "Seang Mei SAW"
         ],
-        "moderators": [],
-        "panelists": [],
         "description": "",
-        "block": "13:58–14:06"
+        "block": "14:45–15:15"
       },
       {
-        "time": "13:50–14:50",
-        "theme": "Session 7: Mapping Myopia – Who, How & How Fast",
-        "title": "Insights into Prevalence, Progression & Prevention – Australia",
-        "location": "Grand III, IV & Annex",
-        "speakers": [
-          "David MACKEY",
-          "Ian MORGAN"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "14:06–14:14"
-      },
-      {
-        "time": "13:50–14:50",
-        "theme": "Session 7: Mapping Myopia – Who, How & How Fast",
-        "title": "Insights into Prevalence, Progression & Prevention – Europe",
-        "location": "Grand III, IV & Annex",
-        "speakers": [
-          "Aude COUTERIER (France)"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "14:14–14:22"
-      },
-      {
-        "time": "13:50–14:50",
-        "theme": "Session 7: Mapping Myopia – Who, How & How Fast",
-        "title": "Insights into Prevalence, Progression & Prevention – Hong Kong",
-        "location": "Grand III, IV & Annex",
-        "speakers": [
-          "Jason YAM (Hong Kong)"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "14:22–14:30"
-      },
-      {
-        "time": "13:50–14:50",
-        "theme": "Session 7: Mapping Myopia – Who, How & How Fast",
-        "title": "Panel Discussion",
-        "location": "Grand III, IV & Annex",
-        "speakers": [],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "14:30–14:50"
-      },
-      {
-        "time": "14:50–15:20",
+        "time": "15:15–15:45",
         "theme": "Coffee Break",
         "title": "Coffee Break",
         "location": "Foyer",
@@ -479,10 +440,10 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "14:50–15:20"
+        "block": "15:15–15:45"
       },
       {
-        "time": "15:20–16:20",
+        "time": "15:45–16:45",
         "theme": "Session 5: Beyond the Horizon – Radical New Myopia Strategies",
         "title": "AI and Digital Tools for Myopia Management for Childhood and Adults",
         "location": "Grand Ballroom",
@@ -492,36 +453,36 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "15:20–15:28"
+        "block": "15:45–15:53"
       },
       {
-        "time": "15:20–16:20",
+        "time": "15:45–16:45",
         "theme": "Session 5: Beyond the Horizon – Radical New Myopia Strategies",
-        "title": "AI and Digital Tools for Myopia Monitoring",
+        "title": "Crosslinking in Preventing or Reversing Myopia: Where Are We Now?",
         "location": "Grand Ballroom",
         "speakers": [
-          "Saiko MATSUMURA"
+          "Ygal ROTENSTREICH (Israel)"
         ],
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "15:28–15:36"
+        "block": "15:53–16:01"
       },
       {
-        "time": "15:20–16:20",
+        "time": "15:45–16:45",
         "theme": "Session 5: Beyond the Horizon – Radical New Myopia Strategies",
-        "title": "Scleral Cross-Linking for Myopia Control: Where Are We Now?",
+        "title": "How Does Childhood Myopia Contribute to Pathologic Myopia?",
         "location": "Grand Ballroom",
         "speakers": [
-          "Donny HOANG (Singapore)"
+          "Aude COUTERIER (France)"
         ],
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "15:36–15:44"
+        "block": "16:01–16:09"
       },
       {
-        "time": "15:20–16:20",
+        "time": "15:45–16:45",
         "theme": "Session 5: Beyond the Horizon – Radical New Myopia Strategies",
         "title": "Emerging Myopia Diagnostics and Therapeutics in Taiwan",
         "location": "Grand Ballroom",
@@ -531,10 +492,10 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "15:44–15:52"
+        "block": "16:09–16:17"
       },
       {
-        "time": "15:20–16:20",
+        "time": "15:45–16:45",
         "theme": "Session 5: Beyond the Horizon – Radical New Myopia Strategies",
         "title": "The Need to Establish Population-Based Myopia Data for Prevalence and Progression",
         "location": "Grand Ballroom",
@@ -544,127 +505,106 @@
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "15:52–16:00"
+        "block": "16:17–16:25"
       },
       {
-        "time": "15:20–16:20",
+        "time": "15:45–16:45",
         "theme": "Session 5: Beyond the Horizon – Radical New Myopia Strategies",
         "title": "Panel Discussion",
         "location": "Grand Ballroom",
         "speakers": [],
-        "moderators": [],
-        "panelists": [
-          "Pengtat CHEONG (Taiwan)",
+        "moderators": [
           "Daniela FERRARA (U.S.)",
+          "Daniel TING (Singapore)"
+        ],
+        "panelists": [
+          "Pengtat CHEONG (Singapore)",
           "Norbert GORNY (France)"
         ],
         "description": "",
-        "block": "16:00–16:20"
+        "block": "16:25–16:50"
       },
       {
-        "time": "16:20–17:55",
-        "theme": "Session 6: Global Regulatory Pathways for Myopia Control",
-        "title": "Japanese Regulatory Perspective",
+        "time": "16:45–17:50",
+        "theme": "Session 6: Myopia Crisis on the Rise: Urgent Action Needed",
+        "title": "Insights into Prevalence, Progression, and Prevention Strategies in Singapore",
         "location": "Grand Ballroom",
         "speakers": [
-          "Emi INAGAKI (Japan)"
+          "Marcus ANG (Singapore)"
         ],
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "16:20–16:28"
+        "block": "16:50–16:58"
       },
       {
-        "time": "16:20–17:55",
-        "theme": "Session 6: Global Regulatory Pathways for Myopia Control",
-        "title": "U.S. Regulatory Perspective",
+        "time": "16:45–17:50",
+        "theme": "Session 6: Myopia Crisis on the Rise: Urgent Action Needed",
+        "title": "Insights into Prevalence, Progression, and Prevention Strategies in Australia",
         "location": "Grand Ballroom",
         "speakers": [
-          "Paula Johns (U.S.)"
+          "Padmaja SANKARIDURG (Australia)"
         ],
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "16:28–16:36"
+        "block": "16:58–17:06"
       },
       {
-        "time": "16:20–17:55",
-        "theme": "Session 6: Global Regulatory Pathways for Myopia Control",
-        "title": "Singapore Regulatory Perspective",
+        "time": "16:45–17:50",
+        "theme": "Session 6: Myopia Crisis on the Rise: Urgent Action Needed",
+        "title": "Insights into Prevalence, Progression, and Prevention Strategies in China",
         "location": "Grand Ballroom",
         "speakers": [
-          "TBC (Singapore)"
+          "Xiao YANG (China)"
         ],
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "16:36–16:44"
+        "block": "17:06–17:14"
       },
       {
-        "time": "16:20–17:55",
-        "theme": "Session 6: Global Regulatory Pathways for Myopia Control",
-        "title": "European Regulatory Perspective",
+        "time": "16:45–17:50",
+        "theme": "Session 6: Myopia Crisis on the Rise: Urgent Action Needed",
+        "title": "Insights into Prevalence, Progression & Prevention – Europe",
         "location": "Grand Ballroom",
         "speakers": [
-          "TBC (Europe)"
+          "Aude COUTERIER (France)"
         ],
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "16:44–16:52"
+        "block": "17:14–17:22"
       },
       {
-        "time": "16:20–17:55",
-        "theme": "Session 6: Global Regulatory Pathways for Myopia Control",
-        "title": "LMICs Regulatory Considerations",
+        "time": "16:45–17:50",
+        "theme": "Session 6: Myopia Crisis on the Rise: Urgent Action Needed",
+        "title": "Insights into Prevalence, Progression & Prevention – Hong Kong",
         "location": "Grand Ballroom",
         "speakers": [
-          "TBC (LMICs)"
+          "Jason YAM (Hong Kong)"
         ],
         "moderators": [],
         "panelists": [],
         "description": "",
-        "block": "16:52–17:00"
+        "block": "17:22–17:30"
       },
       {
-        "time": "16:20–17:55",
-        "theme": "Session 6: Global Regulatory Pathways for Myopia Control",
-        "title": "Australian Regulatory Perspective",
-        "location": "Grand Ballroom",
-        "speakers": [
-          "TBC (Australia)"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "17:00–17:08"
-      },
-      {
-        "time": "16:20–17:55",
-        "theme": "Session 6: Global Regulatory Pathways for Myopia Control",
-        "title": "Taiwan Regulatory Perspective",
-        "location": "Grand Ballroom",
-        "speakers": [
-          "TBC (Taiwan)"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "description": "",
-        "block": "17:08–17:16"
-      },
-      {
-        "time": "16:20–17:55",
-        "theme": "Session 6: Global Regulatory Pathways for Myopia Control",
+        "time": "16:45–17:50",
+        "theme": "Session 6: Myopia Crisis on the Rise: Urgent Action Needed",
         "title": "Panel Discussion",
         "location": "Grand Ballroom",
         "speakers": [],
-        "moderators": [],
+        "moderators": [
+          "Marcus ANG",
+          "Aude COUTERIER"
+        ],
         "panelists": [],
         "description": "",
-        "block": "17:16–17:55"
+        "block": "17:30–17:50"
       },
       {
-        "time": "17:55–18:00",
+        "time": "17:50–18:00",
         "theme": "Closing",
         "title": "Closing Remarks",
         "location": "Grand Ballroom",
