@@ -164,7 +164,18 @@ function buildSpeakers(): Speaker[] {
             const existing = map.get(slug)!;
             existing.name = getPreferredName(existing.name, name);
           }
-          // Don't add the panel session to their profile
+          
+          // Add the session to their profile (even for moderators)
+          map.get(slug)!.sessions.push({
+            dayKey: key,
+            dayTitle: data.title,
+            date: data.date,
+            time: session.time,
+            block: session.block,
+            title: session.title,
+            theme: session.theme,
+            location: session.location
+          });
         });
       }
 
@@ -189,6 +200,40 @@ function buildSpeakers(): Speaker[] {
           }
           
           // Add the panel session to their profile
+          map.get(slug)!.sessions.push({
+            dayKey: key,
+            dayTitle: data.title,
+            date: data.date,
+            time: session.time,
+            block: session.block,
+            title: session.title,
+            theme: session.theme,
+            location: session.location
+          });
+        });
+      }
+
+      // Process chairs - create profile and add session
+      if (session.chairs && Array.isArray(session.chairs)) {
+        session.chairs.forEach((rawName: string) => {
+          if (!rawName || shouldSkip(rawName)) return;
+          const name = rawName.trim();
+          const normalizedName = normalizeName(name);
+          const slug = slugify(normalizedName);
+          
+          if (!map.has(slug)) {
+            map.set(slug, {
+              slug,
+              name,
+              sessions: []
+            });
+          } else {
+            // Update to preferred name (one with country)
+            const existing = map.get(slug)!;
+            existing.name = getPreferredName(existing.name, name);
+          }
+          
+          // Add the session to their profile
           map.get(slug)!.sessions.push({
             dayKey: key,
             dayTitle: data.title,

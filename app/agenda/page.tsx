@@ -13,6 +13,7 @@ type Session = {
   speakers: string[];
   moderators?: string[];
   panelists?: string[];
+  chairs?: string[];
   description?: string;
   theme?: string;
   block?: string;
@@ -230,12 +231,36 @@ function AgendaContent() {
             const themeTime = groupedSessions[theme][0]?.time || '';
             return (
               <section key={theme} className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-semibold text-[#2E5B8D] uppercase tracking-wide">
-                    {theme}
-                  </h3>
-                  {themeTime && (
-                    <span className="text-xs text-gray-500">{themeTime}</span>
+                <div>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-sm font-semibold text-[#2E5B8D] uppercase tracking-wide">
+                      {theme}
+                    </h3>
+                    {themeTime && (
+                      <span className="text-xs text-gray-500">{themeTime}</span>
+                    )}
+                  </div>
+                  {groupedSessions[theme][0]?.chairs && groupedSessions[theme][0].chairs.length > 0 && (
+                    <div className="mt-1 text-sm text-gray-600 flex flex-wrap gap-1">
+                      <span className="font-bold text-gray-800">Chairs:</span>
+                      {groupedSessions[theme][0].chairs.map((chair, i) => {
+                        const linkable = isLinkable(chair);
+                        const slug = slugify(normalizeName(chair));
+                        const isLast = i === (groupedSessions[theme][0].chairs?.length ?? 0) - 1;
+                        return (
+                          <span key={`chair-${chair}-${i}`} className="inline-flex items-center gap-1">
+                            {linkable ? (
+                              <Link href={`/speakers?slug=${slug}`} className="text-[#2E5B8D] underline">
+                                {chair}
+                              </Link>
+                            ) : (
+                              <span>{chair}</span>
+                            )}
+                            {!isLast && <span className="text-gray-400">,</span>}
+                          </span>
+                        );
+                      })}
+                    </div>
                   )}
                 </div>
                 

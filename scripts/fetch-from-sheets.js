@@ -18,8 +18,8 @@ const OUTPUT_PATH = path.join(__dirname, '../data/agenda.json');
 
 // Sheet ranges - adjust these to match your Google Sheet structure
 const RANGES = {
-  myopiaDay: 'MyopiaDay!A2:G100',    // Adjust sheet name and range
-  innovationDay: 'InnovationDay !A2:G100' // Adjust sheet name and range (note the space)
+  myopiaDay: 'MyopiaDay!A2:H100',    // Adjust sheet name and range
+  innovationDay: 'InnovationDay !A2:H100' // Adjust sheet name and range (note the space)
 };
 
 async function fetchSheetData() {
@@ -132,7 +132,7 @@ function parseSpeakers(speakerText) {
 
 /**
  * Parse sheet data into session objects
- * Expected columns: Time | Theme | Title | Location | Speakers | Description | Block
+ * Expected columns: Time | Theme | Title | Location | Speakers | Description | Block | Chairs
  */
 function parseSheetData(rows, dayTitle, date) {
   if (!rows || rows.length === 0) {
@@ -156,6 +156,11 @@ function parseSheetData(rows, dayTitle, date) {
       }
 
       const speakerData = parseSpeakers(row[4]);
+      
+      // Parse chairs - split by comma or &
+      const chairs = row[7] 
+        ? row[7].split(/[&,]/).map(s => s.trim()).filter(Boolean)
+        : [];
 
       return {
         time: row[0] || lastTime, // Use current time or last seen time
@@ -165,6 +170,7 @@ function parseSheetData(rows, dayTitle, date) {
         speakers: speakerData.speakers,
         moderators: speakerData.moderators,
         panelists: speakerData.panelists,
+        chairs: chairs,
         description: row[5] || '',
         block: row[6] || ''
       };
