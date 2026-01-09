@@ -124,7 +124,7 @@
         "title": "Long-Term Follow-Up of Effectiveness – What Are the Acceptable Alternatives?",
         "location": "Grand Ballroom",
         "speakers": [
-          "Seo Wei LEO (Singapore)"
+          "Tsiang UNG (Malaysia)"
         ],
         "moderators": [],
         "panelists": [],
@@ -806,7 +806,7 @@
       {
         "time": "08:50–10:40",
         "theme": "Session 1: Defining the Future – Establishing Standard Terminology & Endpoints for Oculomics",
-        "title": "TBC",
+        "title": "How Can We Implement Oculomics Screening in the Context of Nation-Wide Health Checkups in Japan?",
         "location": "Grand Ballroom",
         "speakers": [
           "Ryo KAWASAKI (Japan)"
@@ -915,8 +915,7 @@
         "moderators": [],
         "panelists": [
           "Anand SIVARAMAN (India/Remedio)",
-          "Zhen TIAN (Hong Kong/EGVTON)",
-          "Jovian WEE (Singapore/EyeAI)",
+          "Zhen TIAN (Hong Kong/TrueSight)",
           "Mingguang HE (Hong Kong)",
           "Paisan RUAMVIBOONSUK (Thailand)",
           "Emmett CUNNINGHAM (U.S.)",
@@ -1105,7 +1104,7 @@
       {
         "time": "11:15–12:40",
         "theme": "Session 4: Anterior Segment – Innovation & Regenerative Medicine",
-        "title": "TBC",
+        "title": "Clinical Experience of Regenerative Therapy for Refractory Corneal Diseases",
         "location": "Grand III, IV & Annex",
         "speakers": [
           "Tomohiko USUI (Japan)"
@@ -1151,6 +1150,20 @@
         "location": "Grand III, IV & Annex",
         "speakers": [
           "Jod MEHTA (Singapore)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "chairs": [],
+        "description": "",
+        "block": "11:55–12:03"
+      },
+      {
+        "time": "11:15–12:40",
+        "theme": "Session 3: AI at the Frontline of Ophthalmic Innovation",
+        "title": "TBC",
+        "location": "Grand III, IV & Annex",
+        "speakers": [
+          "Anand SIVARAMAN (India)"
         ],
         "moderators": [],
         "panelists": [],
@@ -1246,10 +1259,10 @@
       {
         "time": "14:40–16:00",
         "theme": "Session 5: Global Innovation Landscape in Retina",
-        "title": "Retinal Innovation in China: Observations, Challenges and Opportunities",
+        "title": "Ophthalmic Innovation Landscape from Singapore",
         "location": "Grand Ballroom",
         "speakers": [
-          "Tien WONG (China)"
+          "Rainny XIE (Singapore)"
         ],
         "moderators": [],
         "panelists": [],
@@ -1351,7 +1364,9 @@
         "location": "Grand Ballroom",
         "speakers": [],
         "moderators": [],
-        "panelists": [],
+        "panelists": [
+          "Ram PALANKI (U.S.)"
+        ],
         "chairs": [],
         "description": "",
         "block": "15:36–16:00"
@@ -1359,7 +1374,7 @@
       {
         "time": "14:40–16:00",
         "theme": "Session 6: Imaging Innovation",
-        "title": "Imaging in Complex Retinal Disease – What Are We Still Missing?",
+        "title": "Why Interoperability Will Define the Next Era of Innovation in Eye Care",
         "location": "Grand III, IV & Annex",
         "speakers": [
           "Ashley KRAS (Australia)"
@@ -1390,10 +1405,10 @@
       {
         "time": "14:40–16:00",
         "theme": "Session 6: Imaging Innovation",
-        "title": "Using AI to Change Clinical Flow & Optimize Efficiency",
+        "title": "The Ground Truth for Deep Learning Models for Glaucoma Detection",
         "location": "Grand III, IV & Annex",
         "speakers": [
-          "Paul CHAN (U.S.)"
+          "Donald C. HOOD (U.S.)"
         ],
         "moderators": [],
         "panelists": [],
@@ -1432,7 +1447,21 @@
       {
         "time": "14:40–16:00",
         "theme": "Session 6: Imaging Innovation",
-        "title": "TBC",
+        "title": "Using AI to Change Clinical Flow & Optimize Efficiency",
+        "location": "Grand III, IV & Annex",
+        "speakers": [
+          "Paul CHAN (U.S.)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "chairs": [],
+        "description": "",
+        "block": "15:20–15:28"
+      },
+      {
+        "time": "14:40–16:00",
+        "theme": "Session 6: Imaging Innovation",
+        "title": "Pinhole Puiloplasty for Irregular Cornea",
         "location": "Grand III, IV & Annex",
         "speakers": [
           "Ashvin AGARWAL (India)"
@@ -1441,7 +1470,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "15:20–15:28"
+        "block": "15:28–15:36"
       },
       {
         "time": "14:40–16:00",
@@ -1453,7 +1482,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "15:28–16:00"
+        "block": "15:36–16:00"
       },
       {
         "time": "16:30–17:50",
@@ -1562,9 +1591,7 @@
         "location": "Grand Ballroom",
         "speakers": [],
         "moderators": [],
-        "panelists": [
-          "Henry HO (Singapore)"
-        ],
+        "panelists": [],
         "chairs": [],
         "description": "",
         "block": "17:26–17:50"
@@ -1575,7 +1602,7 @@
         "title": "Closing Remarks",
         "location": "Grand Ballroom",
         "speakers": [
-          "Daniel TING (Singapore)"
+          "Malvina EYDELMAN (U.S.), Daniel TING (Singapore)"
         ],
         "moderators": [],
         "panelists": [],
