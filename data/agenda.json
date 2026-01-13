@@ -1161,20 +1161,6 @@
       },
       {
         "time": "11:15–12:40",
-        "theme": "Session 3: AI at the Frontline of Ophthalmic Innovation",
-        "title": "TBC",
-        "location": "Grand III, IV & Annex",
-        "speakers": [
-          "Anand SIVARAMAN (India)"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "chairs": [],
-        "description": "",
-        "block": "11:55–12:03"
-      },
-      {
-        "time": "11:15–12:40",
         "theme": "Session 4: Anterior Segment – Innovation & Regenerative Medicine",
         "title": "Mission Impossible? Exploring Photon-UVC as a Non-Antibiotic Strategy for Infectious Keratitis",
         "location": "Grand III, IV & Annex",
@@ -1604,7 +1590,8 @@
         "title": "Closing Remarks",
         "location": "Grand Ballroom",
         "speakers": [
-          "Malvina EYDELMAN (U.S.), Daniel TING (Singapore)"
+          "Malvina EYDELMAN (U.S.)",
+          "Daniel TING (Singapore)"
         ],
         "moderators": [],
         "panelists": [],

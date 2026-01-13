@@ -1,4 +1,28 @@
 import Link from 'next/link';
+import aboutData from '../../data/about.json';
+
+// Helper to convert text with URLs into clickable links
+const renderWithLinks = (text: string) => {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = text.split(urlRegex);
+  
+  return parts.map((part, i) => {
+    if (part.match(urlRegex)) {
+      return (
+        <a 
+          key={i} 
+          href={part} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-[#2E5B8D] font-medium hover:underline"
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+};
 
 export default function AboutPage() {
   return (
@@ -15,46 +39,19 @@ export default function AboutPage() {
       </header>
 
       <main className="p-4 space-y-6 pt-28">
-        <section className="bg-white rounded-lg shadow-sm p-4">
-          <h2 className="text-lg font-bold text-gray-800 mb-3">The Collaborative Community on Ophthalmic Innovation</h2>
-          <p className="text-sm text-gray-700 leading-relaxed">
-            Scheduled for February 3 – 4, 2026 in Hong Kong, the CCOI Asia-Pacific Innovation Forum is a clinician-driven innovation meeting focusing on new technologies, entrepreneurial ventures and product commercialization in the ophthalmic healthcare sector.
-          </p>
-        </section>
-
-        <section className="bg-white rounded-lg shadow-sm p-4">
-          <h3 className="font-semibold text-gray-800 mb-3">Focus Areas</h3>
-          <ul className="text-sm text-gray-700 space-y-2">
-            <li>• Global innovation with a particular interest in the Asia-Pacific region</li>
-            <li>• Groundbreaking advancement in ophthalmic devices, diagnostics and pharmaceuticals</li>
-            <li>• Myopia Consensus Workshop (Day 1)</li>
-            <li>• Innovation Day (Day 2)</li>
-          </ul>
-        </section>
-
-        <section className="bg-white rounded-lg shadow-sm p-4">
-          <h3 className="font-semibold text-gray-800 mb-3">Participants</h3>
-          <p className="text-sm text-gray-700 leading-relaxed">
-            Our meeting brings together physicians, scientists, researchers, regulators, reimbursement specialists, corporate leaders, venture capitalists and angel investors who are interested in furthering ophthalmic care in the Asia-Pacific region and beyond.
-          </p>
-        </section>
-
-        <section className="bg-white rounded-lg shadow-sm p-4">
-          <h3 className="font-semibold text-gray-800 mb-3">Format</h3>
-          <p className="text-sm text-gray-700 leading-relaxed">
-            Our meeting will combine panel discussions, company presentations and networking breaks, providing a unique platform for collaboration and business talks.
-          </p>
-        </section>
-
-        <section className="bg-white rounded-lg shadow-sm p-4">
-          <h3 className="font-semibold text-gray-800 mb-3">Learn More</h3>
-          <p className="text-sm text-gray-700 mb-3">
-            For more information about CCOI and our mission, visit our main website:
-          </p>
-          <a href="https://cc-oi.org/" target="_blank" rel="noopener noreferrer" className="text-[#2E5B8D] underline text-sm">
-            cc-oi.org
-          </a>
-        </section>
+        {(aboutData as any[]).map((card, index) => (
+          <section key={card.id || index} className="bg-white rounded-lg shadow-sm p-6">
+            {/* Render grouped paragraphs for this card */}
+            {card.content.map((paragraph: string, pIndex: number) => (
+              <p 
+                key={pIndex} 
+                className={`text-base text-gray-700 leading-relaxed ${pIndex > 0 ? 'mt-4' : ''}`}
+              >
+                {renderWithLinks(paragraph)}
+              </p>
+            ))}
+          </section>
+        ))}
       </main>
       
       {/* Footer */}

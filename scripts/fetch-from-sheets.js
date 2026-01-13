@@ -15,11 +15,13 @@ const path = require('path');
 const SHEET_ID = '1aXeCCiZ8OFqPq26e4dt5ikpkvtuw_sjX02SsdxB0hwE'; // Replace with your Google Sheet ID
 const CREDENTIALS_PATH = path.join(__dirname, '../google-credentials.json');
 const OUTPUT_PATH = path.join(__dirname, '../data/agenda.json');
+const ABOUT_OUTPUT_PATH = path.join(__dirname, '../data/about.json');
 
 // Sheet ranges - adjust these to match your Google Sheet structure
 const RANGES = {
   myopiaDay: 'MyopiaDay!A2:H100',    // Adjust sheet name and range
-  innovationDay: 'InnovationDay !A2:H100' // Adjust sheet name and range (note the space)
+  innovationDay: 'InnovationDay !A2:H100', // Adjust sheet name and range (note the space)
+  about: 'About!A2:B100'             // Card | Content
 };
 
 async function fetchSheetData() {
@@ -57,9 +59,57 @@ async function fetchSheetData() {
       range: RANGES.innovationDay,
     });
 
+    const aboutResponse = await sheets.spreadsheets.values.get({
+      spreadsheetId: SHEET_ID,
+      range: RANGES.about,
+    });
+
     // Parse the data
-    const myopiaSessions = parseSheetData(myopiaResponse.data.values, 'Myopia Day', 'Feb 3, 2026');
-    const innovationSessions = parseSheetData(innovationResponse.data.values, 'Innovation Day', 'Feb 4, 2026');
+    let myopiaSessions = parseSheetData(myopiaResponse.data.values, 'Myopia Day', 'Feb 3, 2026');
+    let innovationSessions = parseSheetData(innovationResponse.data.values, 'Innovation Day', 'Feb 4, 2026');
+    const aboutData = parseAboutData(aboutResponse.data.values);
+
+    // Apply manual patches to fix data consistency issues
+    const patchSession = (session) => {
+      // Helper to fix names in a list
+      const fixNames = (list) => {
+        if (!list) return [];
+        return list.map(name => {
+          if (name.includes('Chris LEUNG') && name.includes('Hong Kong')) {
+            return name.replace('Chris LEUNG', 'Christopher LEUNG');
+          }
+          if (name.includes('Ashvin AGARWAL') && name.includes('India')) {
+            return name.replace('Ashvin AGARWAL', 'Ashwin AGARWAL');
+          }
+          if (name.includes('Olivia WOO') && name.includes('Australia')) {
+            return name.replace('Olivia WOO', 'Oliver WOO');
+          }
+          return name;
+        });
+      };
+
+      session.speakers = fixNames(session.speakers);
+      session.moderators = fixNames(session.moderators);
+      session.panelists = fixNames(session.panelists);
+      session.chairs = fixNames(session.chairs);
+      return session;
+    };
+
+    myopiaSessions = myopiaSessions.map(patchSession);
+    innovationSessions = innovationSessions.map(patchSession);
+
+    // Remove incorrect sessions
+    innovationSessions = innovationSessions.filter(session => {
+      const isBadAnandSession = 
+        session.theme.includes('Session 3: AI') && 
+        session.speakers.some(s => s.includes('Anand SIVARAMAN'));
+      
+      if (isBadAnandSession) {
+        console.log('   Removed incorrect Anand Sivaraman session from Session 3');
+        return false;
+      }
+      return true;
+    });
 
     // Create agenda structure
     const agendaData = {
@@ -77,14 +127,61 @@ async function fetchSheetData() {
 
     // Write to file
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(agendaData, null, 2));
+    fs.writeFileSync(ABOUT_OUTPUT_PATH, JSON.stringify(aboutData, null, 2));
     console.log('✅ Successfully updated agenda.json from Google Sheets!');
+    console.log('✅ Successfully updated about.json from Google Sheets!');
     console.log(`   Myopia Day: ${myopiaSessions.length} sessions`);
     console.log(`   Innovation Day: ${innovationSessions.length} sessions`);
+    console.log(`   About Page: ${aboutData.length} cards`);
 
   } catch (error) {
     console.error('❌ Error fetching from Google Sheets:', error.message);
     process.exit(1);
   }
+}
+
+/**
+ * Parse About sheet data
+ * Columns: Card | Content
+ */
+function parseAboutData(rows) {
+  if (!rows || rows.length === 0) return [];
+  
+  const cards = [];
+  let currentCard = null;
+  
+  rows.forEach(row => {
+    // row[0] is Card (e.g. "1"), row[1] is Content
+    const cardIdRaw = row[0] ? row[0].toString().trim() : null;
+    const content = row[1] ? row[1].trim() : '';
+    
+    // Skip empty lines
+    if (!content && !cardIdRaw) return;
+    
+    // If we have a new card ID (and it's different from the current one's ID), simple logic:
+    // This assumes rows are grouped by card ID somewhat, or we just merge into existing if found.
+    
+    // If cardId is present, we look up or create
+    if (cardIdRaw) {
+      let existing = cards.find(c => c.id === cardIdRaw);
+      if (!existing) {
+        existing = { id: cardIdRaw, title: '', content: [] };
+        cards.push(existing);
+      }
+      currentCard = existing;
+    }
+    
+    // If we have a current card (either from this row or carried over), add content
+    if (currentCard && content) {
+      // Optional: Check if content looks like a title? 
+      // For now, treat all as paragraphs.
+      // If the user meant "First row is title", we'd need more logic. 
+      // But the request says "provide a new pargraph for each cell".
+      currentCard.content.push(content);
+    }
+  });
+  
+  return cards;
 }
 
 /**
@@ -119,10 +216,10 @@ function parseSpeakers(speakerText) {
     return { speakers: [], moderators, panelists };
   }
 
-  // Regular speakers format - split by both & and /
+  // Regular speakers format - split by &, /, and comma
   return {
     speakers: speakerText
-      .split(/[&\/]/)
+      .split(/[&\/,]/)
       .map(s => s.trim())
       .filter(Boolean),
     moderators: [],

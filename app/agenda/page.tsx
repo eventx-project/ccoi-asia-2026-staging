@@ -368,7 +368,7 @@ function AgendaContent() {
                                 ) : (
                                   <span>{speaker}</span>
                                 )}
-                                {i < session.speakers.length - 1 && <span className="text-gray-400">/</span>}
+                                {i < session.speakers.length - 1 && <span className="text-gray-400">,</span>}
                               </span>
                             );
                           })}
