@@ -8,7 +8,7 @@ const withPWA = require('next-pwa')({
 
 const nextConfig = {
   output: 'export',
-  // basePath: '/ccoi-asia-2026',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   images: {
     unoptimized: true
   }
