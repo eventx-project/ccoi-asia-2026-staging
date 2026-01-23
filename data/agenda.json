@@ -1506,7 +1506,7 @@
       {
         "time": "14:30–16:00",
         "theme": "Session 5: Global Innovation Landscape in Retina",
-        "title": "TBC",
+        "title": "US Regulatory Perspective and Opportunities for Innovation",
         "location": "Grand Ballroom",
         "speakers": [
           "Elvin NG (U.S.)"
@@ -1664,20 +1664,6 @@
       {
         "time": "16:30–18:00",
         "theme": "Session 7: Robotics Innovation",
-        "title": "Robotic Cataract Surgery – Threat or Remedy?",
-        "location": "Grand Ballroom",
-        "speakers": [
-          "David CHANG (U.S.)"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "chairs": [],
-        "description": "",
-        "block": "16:38–16:46"
-      },
-      {
-        "time": "16:30–18:00",
-        "theme": "Session 7: Robotics Innovation",
         "title": "Robotics and Automation in Ophthalmic Care Pathways",
         "location": "Grand Ballroom",
         "speakers": [
@@ -1687,7 +1673,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "16:46–16:54"
+        "block": "16:38–16:46"
       },
       {
         "time": "16:30–18:00",
@@ -1701,7 +1687,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "16:54–17:02"
+        "block": "16:46–16:54"
       },
       {
         "time": "16:30–18:00",
@@ -1715,7 +1701,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "17:02–17:10"
+        "block": "16:54–17:02"
       },
       {
         "time": "16:30–18:00",
@@ -1729,7 +1715,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "17:10–17:18"
+        "block": "17:02–17:10"
       },
       {
         "time": "16:30–18:00",
@@ -1738,6 +1724,20 @@
         "location": "Grand Ballroom",
         "speakers": [
           "Shameema SIKDER (U.S.)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "chairs": [],
+        "description": "",
+        "block": "17:10–17:18"
+      },
+      {
+        "time": "16:30–18:00",
+        "theme": "Session 7: Robotics Innovation",
+        "title": "Robotic Cataract Surgery – Threat or Remedy?",
+        "location": "Grand Ballroom",
+        "speakers": [
+          "David CHANG (U.S.)"
         ],
         "moderators": [],
         "panelists": [],
