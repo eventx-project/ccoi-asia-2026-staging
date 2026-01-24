@@ -600,8 +600,8 @@
         "moderators": [],
         "panelists": [],
         "chairs": [
-          "Daniel TING (Singapore)",
-          "Ygal ROTENSTREICH (Israel)"
+          "Marcus ANG (Singapore)",
+          "Daniel TING (Singapore)"
         ],
         "description": "",
         "block": "15:45–15:53"
@@ -1116,6 +1116,23 @@
       {
         "time": "11:30–12:50",
         "theme": "Session 3: Glaucoma Innovation",
+        "title": "CCOI and Glaucoma Innovation: Origins, Impact, and the Road Ahead",
+        "location": "Grand Ballroom",
+        "speakers": [
+          "Joel SCHUMAN (U.S.)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "chairs": [
+          "Joel SCHUMAN (U.S.)",
+          "Lama AL-ASWAD (U.S.)"
+        ],
+        "description": "",
+        "block": "11:30–11:37"
+      },
+      {
+        "time": "11:30–12:50",
+        "theme": "Session 3: Glaucoma Innovation",
         "title": "A Pattern-Based OCT Metric for Glaucoma Detection Outperforms Conventional Metrics",
         "location": "Grand Ballroom",
         "speakers": [
@@ -1128,7 +1145,7 @@
           "Lama AL-ASWAD (U.S.)"
         ],
         "description": "",
-        "block": "11:30–11:38"
+        "block": "11:37–11:44"
       },
       {
         "time": "11:30–12:50",
@@ -1142,7 +1159,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "11:38–11:46"
+        "block": "11:44–11:51"
       },
       {
         "time": "11:30–12:50",
@@ -1156,7 +1173,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "11:46–11:54"
+        "block": "11:51–11:58"
       },
       {
         "time": "11:30–12:50",
@@ -1170,7 +1187,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "11:54–12:02"
+        "block": "11:58–12:05"
       },
       {
         "time": "11:30–12:50",
@@ -1184,7 +1201,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "12:02–12:10"
+        "block": "12:05–12:12"
       },
       {
         "time": "11:30–12:50",
@@ -1198,7 +1215,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "12:10–12:18"
+        "block": "12:12–12:19"
       },
       {
         "time": "11:30–12:50",
@@ -1212,7 +1229,21 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "12:18–12:26"
+        "block": "12:19–12:26"
+      },
+      {
+        "time": "11:30–12:50",
+        "theme": "Session 3: Glaucoma Innovation",
+        "title": "Shaping Global Standards for Glaucoma Endpoints: What’s Next",
+        "location": "Grand Ballroom",
+        "speakers": [
+          "Lama AL-ASWAD (U.S.)"
+        ],
+        "moderators": [],
+        "panelists": [],
+        "chairs": [],
+        "description": "",
+        "block": "12:26–12:33"
       },
       {
         "time": "11:30–12:50",
@@ -1227,7 +1258,7 @@
         ],
         "chairs": [],
         "description": "",
-        "block": "12:26–12:50"
+        "block": "12:33–12:50"
       },
       {
         "time": "11:30–12:50",
