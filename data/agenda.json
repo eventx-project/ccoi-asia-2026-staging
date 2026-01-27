@@ -39,7 +39,9 @@
         ],
         "moderators": [],
         "panelists": [],
-        "chairs": [],
+        "chairs": [
+          "Daniel TING (Singapore)"
+        ],
         "description": "",
         "block": "08:20–08:40"
       },
