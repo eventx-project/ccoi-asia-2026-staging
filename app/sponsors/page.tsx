@@ -13,8 +13,8 @@ export default function SponsorsPage() {
     },
     { 
       name: 'Santen', 
-      tier: 'Gold Sponsor', 
-      role: 'Myopia Day',
+      tier: 'Silver Sponsor', 
+      role: 'Full Forum',
       logo: getImagePath('/images/sponsors/santen.png'),
       website: 'https://www.santen.com/en'
     },
