@@ -1,5 +1,7 @@
+export const BASE_PATH = '';
+
 export const getBasePath = () => {
-  return '/';
+  return BASE_PATH;
 };
 
 export const getImagePath = (src: string) => {

@@ -19,8 +19,8 @@ const ABOUT_OUTPUT_PATH = path.join(__dirname, '../data/about.json');
 
 // Sheet ranges - adjust these to match your Google Sheet structure
 const RANGES = {
-  myopiaDay: 'MyopiaDay!A2:H100',    // Adjust sheet name and range
-  innovationDay: 'InnovationDay !A2:H100', // Adjust sheet name and range (note the space)
+  myopiaDay: 'MyopiaDay!A2:H200',    // Adjust sheet name and range
+  innovationDay: 'InnovationDay !A2:H200', // Adjust sheet name and range (note the space)
   about: 'About!A2:B100'             // Card | Content
 };
 

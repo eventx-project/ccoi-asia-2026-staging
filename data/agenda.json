@@ -397,7 +397,7 @@
       {
         "time": "12:45–13:45",
         "theme": "CCOI-RCSV Lunch Symposium",
-        "title": "An Integrated AI Ecosystem for Healthcare",
+        "title": "PolyMind AI - An Integrated AI Ecosystem for Healthcare",
         "location": "Grand Ballroom",
         "speakers": [
           "Mingguang HE (Hong Kong)"
@@ -406,7 +406,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "12:55–13:05"
+        "block": "12:55–13:10"
       },
       {
         "time": "12:45–13:45",
@@ -420,7 +420,7 @@
         "panelists": [],
         "chairs": [],
         "description": "",
-        "block": "13:05–13:10"
+        "block": "13:10–13:15"
       },
       {
         "time": "12:45–13:45",
@@ -429,20 +429,6 @@
         "location": "Grand Ballroom",
         "speakers": [
           "Dennis TSE (Hong Kong)"
-        ],
-        "moderators": [],
-        "panelists": [],
-        "chairs": [],
-        "description": "",
-        "block": "13:10–13:15"
-      },
-      {
-        "time": "12:45–13:45",
-        "theme": "CCOI-RCSV Lunch Symposium",
-        "title": "PolyMind AI – An AI Agent & Robotics",
-        "location": "Grand Ballroom",
-        "speakers": [
-          "Danli SHI (Hong Kong)"
         ],
         "moderators": [],
         "panelists": [],
@@ -628,7 +614,7 @@
         "title": "How Does Childhood Myopia Contribute to Pathologic Myopia?",
         "location": "Grand Ballroom",
         "speakers": [
-          "Aude COUTURIER (France)"
+          "Thibaut CHAPRON (France)"
         ],
         "moderators": [],
         "panelists": [],
@@ -730,7 +716,7 @@
         "title": "Europe: Emerging Myopia Burden and Shifting Prevention Paradigms",
         "location": "Grand Ballroom",
         "speakers": [
-          "Aude COUTURIER (France)"
+          "Thibaut CHAPRON (France)"
         ],
         "moderators": [],
         "panelists": [],
@@ -1107,7 +1093,8 @@
           "Ram PALANKI (U.S./Regenxbio)",
           "Lavin ACHUDAN (Singapore/Santen)",
           "Fabio BASCHIERA (Germany/Boehringer)",
-          "Danny SOON (Singapore/CRIS)"
+          "Danny SOON (Singapore/CRIS)",
+          "Pengtat CHEONG (Taiwan/ZEISS)"
         ],
         "chairs": [
           "Daniel TING (Singapore)"
