@@ -16,14 +16,12 @@ const SHEET_ID = '1aXeCCiZ8OFqPq26e4dt5ikpkvtuw_sjX02SsdxB0hwE'; // Replace with
 const CREDENTIALS_PATH = path.join(__dirname, '../google-credentials.json');
 const OUTPUT_PATH = path.join(__dirname, '../data/agenda.json');
 const ABOUT_OUTPUT_PATH = path.join(__dirname, '../data/about.json');
-const NOTIFICATIONS_OUTPUT_PATH = path.join(__dirname, '../data/notifications.json');
 
 // Sheet ranges - adjust these to match your Google Sheet structure
 const RANGES = {
   myopiaDay: 'MyopiaDay!A2:H200',    // Adjust sheet name and range
   innovationDay: 'InnovationDay !A2:H200', // Adjust sheet name and range (note the space)
-  about: 'About!A2:B100',             // Card | Content
-  notifications: 'push notification!A2:D100' // Title | Message | Date | Type
+  about: 'About!A2:B100'             // Card | Content
 };
 
 async function fetchSheetData() {
@@ -66,19 +64,10 @@ async function fetchSheetData() {
       range: RANGES.about,
     });
 
-    const notificationsResponse = await sheets.spreadsheets.values.get({
-      spreadsheetId: SHEET_ID,
-      range: RANGES.notifications,
-    }).catch(err => {
-      console.warn('Could not fetch notifications (tab might be missing):', err.message);
-      return { data: { values: [] } };
-    });
-
     // Parse the data
     let myopiaSessions = parseSheetData(myopiaResponse.data.values, 'Myopia Day', 'Feb 3, 2026');
     let innovationSessions = parseSheetData(innovationResponse.data.values, 'Innovation Day', 'Feb 4, 2026');
     const aboutData = parseAboutData(aboutResponse.data.values);
-    const notificationsData = parseNotificationsData(notificationsResponse.data.values);
 
     // Apply manual patches to fix data consistency issues
     const patchSession = (session) => {
@@ -139,15 +128,11 @@ async function fetchSheetData() {
     // Write to file
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(agendaData, null, 2));
     fs.writeFileSync(ABOUT_OUTPUT_PATH, JSON.stringify(aboutData, null, 2));
-    fs.writeFileSync(NOTIFICATIONS_OUTPUT_PATH, JSON.stringify(notificationsData, null, 2));
-
     console.log('✅ Successfully updated agenda.json from Google Sheets!');
     console.log('✅ Successfully updated about.json from Google Sheets!');
-    console.log('✅ Successfully updated notifications.json from Google Sheets!'); 
     console.log(`   Myopia Day: ${myopiaSessions.length} sessions`);
     console.log(`   Innovation Day: ${innovationSessions.length} sessions`);
     console.log(`   About Page: ${aboutData.length} cards`);
-    console.log(`   Notifications: ${notificationsData.length} items`);
 
   } catch (error) {
     console.error('❌ Error fetching from Google Sheets:', error.message);
@@ -197,17 +182,6 @@ function parseAboutData(rows) {
   });
   
   return cards;
-}
-
-function parseNotificationsData(rows) {
-  if (!rows) return [];
-  return rows.map((row, index) => ({
-    id: `notif-${index}-${Date.now()}`,
-    title: row[0] || '',
-    message: row[1] || '',
-    date: row[2] || new Date().toLocaleDateString(),
-    type: row[3] || 'info'
-  })).filter(item => item.title || item.message);
 }
 
 /**

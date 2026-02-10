@@ -273,16 +273,15 @@ function AgendaContent() {
                   )}
                 </div>
                 
-                <div className="overflow-x-auto pb-4 -mx-4 px-4">
-                  <div className="flex gap-4 w-max">
-                    {groupedSessions[theme].map((session, idx) => {
-                      const timeString = session.block || session.time;
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {groupedSessions[theme].map((session, idx) => {
+                  const timeString = session.block || session.time;
                   const timeDisplay = timeString.split(/[-–]/); // Split by hyphen or en-dash
                   return (
                   <div 
                     key={`${theme}-${idx}`} 
                     id={session.block || session.time}
-                    className="flex gap-2 scroll-mt-40 transition-all duration-300 rounded-lg p-1 h-full w-[320px]"
+                    className="flex gap-2 scroll-mt-40 transition-all duration-300 rounded-lg p-1 h-full"
                   >
                     <div className="w-16 text-right text-xs text-gray-500 flex-shrink-0 pt-1">
                       {timeDisplay.length > 1 ? (
@@ -383,7 +382,6 @@ function AgendaContent() {
                   </div>
                   );
                 })}
-                  </div>
                 </div>
               </section>
             );

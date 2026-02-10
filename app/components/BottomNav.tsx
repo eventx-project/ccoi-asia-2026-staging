@@ -1,12 +1,11 @@
 import Link from 'next/link';
-import { Home, Calendar, Users, ClipboardList, Info, Mail, Bell } from 'lucide-react';
+import { Home, Calendar, Users, ClipboardList, Info, Mail } from 'lucide-react';
 
 export default function BottomNav() {
   const navItems = [
     { icon: Home, label: 'Home', href: '/' },
     { icon: Calendar, label: 'Agenda', href: '/agenda' },
     { icon: Users, label: 'Speakers', href: '/speakers' },
-    { icon: Bell, label: 'Notifs', href: '/notifications' },
     { icon: ClipboardList, label: 'Sponsors', href: '/sponsors' },
     { icon: Info, label: 'About', href: '/about' },
     { icon: Mail, label: 'Contact', href: '/contact' },
